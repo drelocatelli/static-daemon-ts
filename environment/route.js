@@ -13,7 +13,7 @@ class Route {
     }
 
     get(path, filePath, data) {
-        this.app.get(path.concat('api'), (req, res) => {
+        this.app.get(path.concat('/api'), (req, res) => {
             res.json(data);
         });
         this.app.get(path, (req, res) => {

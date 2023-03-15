@@ -1,5 +1,6 @@
+console.log(window.location)
 const server$ = new rxjs.Observable(observer => {
-    fetch(`http://${window.location.host}/api`)
+    fetch(window.location.href.concat('/api'))
       .then(response => response.json())
       .then(data => {
         observer.next(data); // envia os dados para o observer
