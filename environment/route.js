@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 class Route {
     app;
     
@@ -6,9 +7,9 @@ class Route {
         this.app = app;
     }
     
-    define(filePath) {
-        const html = fs.readFileSync( __dirname + filePath );
-        res.sendFile(html);
+    define(filePath, res) {
+        // const html = fs.readFileSync(filePath, {root: 'public'});
+        res.sendFile(filePath, {root: 'public'});
     }
 
     get(path, filePath, data) {
@@ -16,7 +17,7 @@ class Route {
             res.json(data);
         });
         this.app.get(path, (req, res) => {
-            this.define(filePath);
+            this.define(filePath, res);
         });
     }
 }
