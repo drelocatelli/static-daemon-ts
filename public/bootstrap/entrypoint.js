@@ -1,4 +1,3 @@
-console.log(window.location)
 const server$ = new rxjs.Observable(observer => {
     fetch(window.location.href.concat('/api'))
       .then(response => response.json())
