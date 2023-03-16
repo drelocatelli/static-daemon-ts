@@ -16,7 +16,9 @@ class WatchClientServer {
     running() {
         this.socket().on('reload', () => {
             console.log('Reload event...');
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 200);
         });
     }
     
