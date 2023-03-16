@@ -5,17 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="bootstrap/rxjs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="js/animations.js" defer></script>
+
     <title>Page</title>
 </head>
 <body>
-    Is a Page? <put-test>false</put-test>
-    
+    <div class="blocks">
+        <div id="animation-1" class="block">
+            Animation 1 - bounce
+        </div>
+        
+        <div id="animation-2" class="block">
+            Animation 2 - reveal
+            <div class="reveal">Reveal 1</div>
+            <div class="reveal">Reveal 2</div>
+            <div class="reveal">Reveal 3</div>
+        </div>
+
+        <div id="animation-3" class="block">
+            Animation 3 - right
+            <div class="reveal">Reveal 1</div>
+            <div class="reveal">Reveal 2</div>
+            <div class="reveal">Reveal 3</div>
+        </div>
+
+        <div id="animation-4" class="block">
+            Animation 4 - fromTo
+        </div>
+
+        <div id="animation-5" class="block">
+            Animation 5 - Scale
+        </div>
+    </div>
+
     <script src="bootstrap/entrypoint.js"></script>
     <script>
        server$.subscribe(data => {
-            document.querySelector('put-test').innerHTML = data.teste
             console.log(data)
         });
     </script>
 </body>
 </html>
+
+<style>
+    .blocks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .block {
+        background-color: red;
+        font-weight: bold;
+        color: #fff;
+        width: 150px;
+        height: 150px;
+        margin: 5px;
+    }
+</style>
