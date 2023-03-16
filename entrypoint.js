@@ -12,5 +12,6 @@ app.use('/', express.static('public'));
 
 route.get('/', 'index.html', {teste: 'true'});
 route.get('/page', 'page.html', {teste: 'true', otherData: 'hello world'});
+route.get('/reactive', 'reactive.html', {});
 
 watch(server, process.env.PORT);

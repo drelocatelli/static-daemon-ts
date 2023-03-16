@@ -6,36 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="bootstrap/rxjs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="js/animations.js" defer></script>
 
-    <title>Page</title>
+    <title>Reactive</title>
 </head>
 <body>
     <div class="blocks">
-        <div id="animation-1" class="block">
-            Animation 1 - bounce
+        <div id="block-0" class="block">
+            <value>0</value>
+            <br>
+            <button name="decrement">-</button>
+            <button name="increment">+</button>
         </div>
-        
-        <div id="animation-2" class="block">
-            Animation 2 - reveal
-            <div class="reveal">Reveal 1</div>
-            <div class="reveal">Reveal 2</div>
-            <div class="reveal">Reveal 3</div>
-        </div>
-
-        <div id="animation-3" class="block">
-            Animation 3 - right
-            <div class="reveal">Reveal 1</div>
-            <div class="reveal">Reveal 2</div>
-            <div class="reveal">Reveal 3</div>
-        </div>
-
-        <div id="animation-4" class="block">
-            Animation 4 - fromTo
-        </div>
-
-        <div id="animation-5" class="block">
-            Animation 5 - Scale
+        <div id="block-1" class="block">
+            Block 1
         </div>
     </div>
 
@@ -63,5 +46,6 @@
         width: 150px;
         height: 150px;
         margin: 5px;
+        user-select: none;
     }
 </style>
