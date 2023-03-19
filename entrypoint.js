@@ -11,6 +11,5 @@ const route = new router(app);
 app.use('/', express.static('public'));
 
 route.get('/', 'index.html', {teste: 'true'});
-route.get('/page', 'page.html', {teste: 'true', otherData: 'hello world'});
 
 watch(server, process.env.PORT);
