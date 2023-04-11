@@ -19,14 +19,13 @@ server$.subscribe(value => {
 });
 
 function preventScriptsBeforeInjector() {
-    const javascripts = document.body.querySelectorAll('script');
+    const javascripts = document.body.querySelectorAll('javascript');
     for (let script of javascripts) {
         if (script.parentElement.localName != 'script-injector') {
             let newScript = document.createElement('script');
             newScript.innerHTML = script.childNodes[0].nodeValue;
             injector.appendChild(newScript);
             script.remove();
-            
         }
     }
 }
