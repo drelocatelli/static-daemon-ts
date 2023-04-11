@@ -1,3 +1,5 @@
+var server = {data: null};
+
 /**
  @license
 Apache License 2.0 https://github.com/ReactiveX/RxJS/blob/master/LICENSE.txt
@@ -222,4 +224,8 @@ class Entrypoint {
     }
 }
 
-let entrypoint = new Entrypoint();
+let entrypoint; 
+
+window.onload = () => {
+    entrypoint = new Entrypoint();
+}

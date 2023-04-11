@@ -14,20 +14,21 @@ var server$ = new rxjs.Observable((observer) => {
         });
 });
 
-server$.subscribe(value => {
-    global = value;
-});
-
 function preventScriptsBeforeInjector() {
-    const javascripts = document.body.querySelectorAll('javascript');
-    for (let script of javascripts) {
-        if (script.parentElement.localName != 'script-injector') {
-            let newScript = document.createElement('script');
-            newScript.innerHTML = script.childNodes[0].nodeValue;
-            injector.appendChild(newScript);
-            script.remove();
+    const javascripts = document.body.querySelectorAll('script');
+    server$.subscribe(value => {
+        server = {data: {...value}};
+        if(server != undefined) {
+            for (let script of javascripts) {
+                if (script.parentElement.localName != 'script-injector') {
+                    let newScript = document.createElement('script');
+                    newScript.innerHTML = script.childNodes[0].nodeValue;
+                    injector.appendChild(newScript);
+                    script.remove();
+                }
+            }
         }
-    }
+    });
 }
 
 class ScriptInjector {
