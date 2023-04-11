@@ -17,12 +17,11 @@
     </component>
 
     <component src="components/form.html"></component>
-    
-    <javascript>
-        console.log(global)
-    //    server$?.subscribe(data => {
-    //         console.log(data)
-    //     });
-    </javascript>
+
+    <script>
+        server$.subscribe(value => {
+            console.log('server:', value);
+        })
+    </script>
 </body>
 </html>
