@@ -24,3 +24,4 @@ class ScriptInjector {
 }
 
 new ScriptInjector('/bootstrap/watch.js');
+new ScriptInjector('/bootstrap/componentInjector.js');
